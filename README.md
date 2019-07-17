@@ -18,7 +18,28 @@ The codes are provided to generate sample size and power for both Frequentist an
 
 We give brief description of the R files below:
 
-1. type1error_fullybayesian.R
+1. freq_power_sample
+
+This function calculates the Frequentist sample size for a given value of theta, allocation, alpha, l_P, l_R, and l_E.
+
+Arguments
+
+•	n_total: Maximum number of n to get the sample size
+
+•	alloc: Allocation vector
+
+•	l_E: lambda of the arm E
+
+•	l_R: lambda of the arm R
+
+•	l_P: lambda of the arm P
+
+•	theta: effect retention parameter
+
+Output: Power, power curves for different allocations, power curves for different theta, and minimum sample size of the arm P satisfying power>=1-beta 
+
+
+2. type1error_fullybayesian.R
 
 This function calculates the estimated type I error under exact Bayesian approach for different values of theta, calculated sample size, allocation, and lamE.
 
