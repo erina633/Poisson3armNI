@@ -74,4 +74,4 @@ for(i in 1: length(lamE)){
     fb_type1[i] = power_fbayes(r.allocmat[,1], n2, lamE[i], theta)
 }
 fb_type1
-#write.csv(fb_type1,file="C:\\Erina\\Paper\\Analysis\\Shrabanti_Poisson_Paper\\type1.csv")
+
