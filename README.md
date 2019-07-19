@@ -2,7 +2,7 @@
 
 The codes are provided to generate sample size and power for both Frequentist and Bayesian approaches. The following notations are used in this package:
 
-•	lamE (or l_E), lamR (or l_R),  and lamP (or l_P): The Poisson rate parameter in the arm E, R, and P respectively
+•	l_E, l_R,  and l_P: The Poisson rate parameters for the arm E, R, and P, respectively
 
 •	nP: The sample size in the placebo arm (P)
 
