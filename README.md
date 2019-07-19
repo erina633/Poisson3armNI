@@ -1,4 +1,4 @@
-# Poisson3armNI: R codes for " New Approaches for Testing Non-inferiority for Three-arm Trials with Poisson Distributed Outcomes"
+# Poisson3armNI: R codes for "New Approaches for Testing Non-inferiority for Three-arm Trials with Poisson Distributed Outcomes"
 
 The codes are provided to generate sample size and power for both Frequentist and Bayesian approaches. The following notations are used in this package:
 
