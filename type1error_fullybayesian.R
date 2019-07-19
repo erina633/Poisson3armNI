@@ -1,14 +1,19 @@
 #### fully bayesian type I error ####
-type1_fbayes = function(r.alloc, n, l_E, l_R, l_P, theta, aE, bE, aR, bR, aP, bP){
+type1_fbayes = function(alloc, n, l_E, l_R, l_P, theta, aE, bE, aR, bR, aP, bP){
   set.seed(123)
   n_star<- 10000
   
-  
   Est_Prob = rep(0, n_star)
   
-  nP=r.alloc[1]*n
-  nR=r.alloc[2]*n
-  nE=r.alloc[3]*n
+  #Sample size correponding to experimental, reference, and placebo arm
+  n_arm = rep(NA, 3)
+  for(i in 1:3){
+    n_arm[i] = n*alloc[i]
+  }
+  
+  nP=n_arm[1]
+  nR=n_arm[2]
+  nE=n_arm[3]
   
   tE<-tR<-tP<-1
   
@@ -60,7 +65,7 @@ n4 = c(19,25,33,46,70)
 n5 = c(32,46,71,127,284)
 n6 = c(15,20,27,37,56)
 
-r.alloc = matrix(c(1,1,1,2,2,1,3, 2,1),3,3)
+alloc = matrix(c(1,1,1,2,2,1,3, 2,1),3,3)
 
 l_E = c(20,19.7,19.4,19.1,18.8)
 theta = .75
@@ -73,6 +78,8 @@ aE = 21; bE = 1; aR = 21; bR = 1; aP = 1; bP = 1
 
 fb_type1 = rep(NA, length(l_E))
 for(i in 1: length(l_E)){
-  fb_type1[i] = type1_fbayes(r.alloc[,1], n = n1, l_E[i], l_R, l_P, theta, aE, bE, aR, bR, aP, bP)
+  fb_type1[i] = type1_fbayes(alloc[,1], n = n1, l_E[i], l_R, l_P, theta, aE, bE, aR, bR, aP, bP)
 }
 fb_type1
+
+
