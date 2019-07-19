@@ -1,12 +1,8 @@
-#### fully bayesian power ####
-power_fbayes<-function(r.alloc, n, lamE, theta)
-{
+#### fully bayesian type I error ####
+type1_fbayes = function(r.alloc, n, l_E, l_R, l_P, theta, aE, bE, aR, bR, aP, bP){
   set.seed(123)
   n_star<- 10000
-  p_star<-0.975
-  T_val = 1000
-  lamR<-21
-  lamP<-7
+  
   
   Est_Prob = rep(0, n_star)
   
@@ -24,25 +20,25 @@ power_fbayes<-function(r.alloc, n, lamE, theta)
     count1=0
     count2=0
     
-    xP=rpois(1,nP*lamP*tP)
-    xR=rpois(1,nR*lamR*tR)
-    xE=rpois(1,nE*lamE*tE)
+    xP=rpois(1,nP*l_P*tP)
+    xR=rpois(1,nR*l_R*tR)
+    xE=rpois(1,nE*l_E*tE)
     
     while (count1<T_val)
     {
-      aE<-21; bE<-1; aR<-21; bR<-1; aP<-1; bP<-1
-      lamEgdata=rgamma(1,aE+xE,bE+nE*tE)
-      lamRgdata=rgamma(1,aR+xR,bR+nR*tR)
-      lamPgdata=rgamma(1,aP+xP,bP+nP*tP)
       
-      dEPn=lamEgdata-lamPgdata
-      dRPn=lamRgdata-lamPgdata
+      l_Egdata=rgamma(1,aE+xE,bE+nE*tE)
+      l_Rgdata=rgamma(1,aR+xR,bR+nR*tR)
+      l_Pgdata=rgamma(1,aP+xP,bP+nP*tP)
+      
+      dEPn=l_Egdata-l_Pgdata
+      dRPn=l_Rgdata-l_Pgdata
       
       if(dRPn>0)
       { 
         count1=count1+1
         
-        if (dEPn/dRPn<=((lamE - lamP)/(lamR - lamP)))
+        if (dEPn/dRPn<=((l_E - l_P)/(l_R - l_P)))
           count2=count2+1
       }
     }
@@ -64,14 +60,19 @@ n4 = c(19,25,33,46,70)
 n5 = c(32,46,71,127,284)
 n6 = c(15,20,27,37,56)
 
-r.allocmat = matrix(c(1,1,1,2,2,1,3, 2,1),3,3)
+r.alloc = matrix(c(1,1,1,2,2,1,3, 2,1),3,3)
 
-lamE = c(20,19.7,19.4,19.1,18.8)
+l_E = c(20,19.7,19.4,19.1,18.8)
 theta = .75
+p_star = 0.975
+T_val = 1000
+l_R = 21
+l_P = 7
 
-fb_type1 = rep(NA, length(lamE))
-for(i in 1: length(lamE)){
-    fb_type1[i] = power_fbayes(r.allocmat[,1], n2, lamE[i], theta)
+aE = 21; bE = 1; aR = 21; bR = 1; aP = 1; bP = 1
+
+fb_type1 = rep(NA, length(l_E))
+for(i in 1: length(l_E)){
+  fb_type1[i] = type1_fbayes(r.alloc[,1], n = n1, l_E[i], l_R, l_P, theta, aE, bE, aR, bR, aP, bP)
 }
 fb_type1
-
