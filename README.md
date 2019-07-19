@@ -12,9 +12,9 @@ The codes are provided to generate sample size and power for both Frequentist an
 
 •	theta: effect retention parameter
 
-•	r.alloc (or alloc): Allocation vector which can be (1:1:1), (2:2:1) or (3:2:1) for nE:nR:nP
+•	alloc: Allocation vector which can be (1:1:1), (2:2:1) or (3:2:1) for nE:nR:nP
 
-•	N: Total sample size
+•	n: Total sample size
 
 We give brief description of the R files below:
 
