@@ -41,16 +41,22 @@ Output: Power, power curves for different allocations, power curves for differen
 
 2. type1error_fullybayesian.R
 
-This function calculates the estimated type I error under exact Bayesian approach for different values of theta, calculated sample size, allocation, and lamE.
+This function calculates the estimated type I error under exact Bayesian approach for different values of theta, calculated sample size, allocation, and l_E.
 
 Arguments
 
 •	n: sample size
 
-•	r.alloc: Allocation vector
+•	alloc: Allocation vector
 
-•	lamE: lambda of the arm E
+•	l_E: lambda of the arm E
+
+•	l_R: lambda of the arm R
+
+•	l_P: lambda of the arm P
 
 •	theta: effect retention parameter
+
+•	aE, bE, aR, bR, aP, bP: Bayesian gamma prior parameters for three arms
 
 Output: Estimated type I error for exact Bayesian approach
