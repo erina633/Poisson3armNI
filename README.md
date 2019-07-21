@@ -176,11 +176,9 @@ n: Minimum sample size of the arm P satisfying power>=0.8
 4. samplesize_calc.R
 This file calculates the sample size for 80% power under the Frequentist, fully Bayesian and approximation-based Bayesian approaches across different values of lamE, theta and allocations.
 
-5. freq.simulatedpower.R
-This file calculates the Frequentist simulated power across different values of lamE, theta and allocations using the calculated sample size.
 
-6. full.bayes.simulatedpower.R
+5. full.bayes.simulatedpower.R
 This file calculates the fully Bayesian simulated power across different values of lamE, theta and allocations using the calculated sample size.
 
-7. approx.bayes.simulatedpower.R
+6. approx.bayes.simulatedpower.R
 This file calculates the simulated power under approximation-based Bayesian approach across different values of lamE, theta and allocations using the calculated sample size.
