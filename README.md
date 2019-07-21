@@ -28,17 +28,17 @@ This function calculates the Frequentist sample size for a given value of theta,
 
 Arguments
 
-•	n_total: Maximum number of n to get the sample size
+n_total: Maximum number of n to get the sample size
 
-•	alloc: Allocation vector
+alloc: Allocation vector
 
-•	l_E: lambda of the arm E
+l_E: lambda of the arm E
 
-•	l_R: lambda of the arm R
+l_R: lambda of the arm R
 
-•	l_P: lambda of the arm P
+l_P: lambda of the arm P
 
-•	theta: effect retention parameter
+theta: effect retention parameter
 
 Output: Power, power curves for different allocations, power curves for different theta, and minimum sample size of the arm P satisfying power>=1-beta 
 
@@ -49,19 +49,19 @@ This function calculates the estimated type I error under exact Bayesian approac
 
 Arguments
 
-•	n: sample size
+n: sample size
 
-•	alloc: Allocation vector
+alloc: Allocation vector
 
-•	l_E: lambda of the arm E
+l_E: lambda of the arm E
 
-•	l_R: lambda of the arm R
+l_R: lambda of the arm R
 
-•	l_P: lambda of the arm P
+l_P: lambda of the arm P
 
-•	theta: effect retention parameter
+theta: effect retention parameter
 
-•	aE, bE, aR, bR, aP, bP: Bayesian gamma prior parameters for three arms
+aE, bE, aR, bR, aP, bP: Bayesian gamma prior parameters for three arms
 
 Output: Estimated type I error for exact Bayesian approach
 
