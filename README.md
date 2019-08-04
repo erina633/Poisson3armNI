@@ -4,7 +4,7 @@ A legacy version of the software code exists in the following webpage:
 
 https://github.com/Shrabanti87/PoisNI3arm   
 
-The research is supported by PCORI contract number ME-1409-21410, PI: Samiran Ghosh
+This research is supported by PCORI contract number ME-1409-21410, PI: Samiran Ghosh
 
 The codes are provided to generate sample size and power for both Frequentist and Bayesian approaches. The following notations are used in this package:
 
